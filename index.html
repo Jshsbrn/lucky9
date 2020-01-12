@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lucky 9</title>
+    <link rel="stylesheet" href="g.css">
+    <style>
+        body {
+            background-color: #4d1212;
+        }
+
+        button {
+            padding: 20px;
+        }
+
+        img {
+            max-width: 40%;
+        }
+
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Lucky 9</h1>
+        <img id="c1" src="1.png" alt="">
+        <img id="c2" src="1.png" alt="">
+        <h2 id="num1"></h2>
+        <h2 id="num2"></h2>
+        <h1 id="notice"></h1>
+        <br>
+        <button id="but">DRAW</button>
+    </div>
+</body>
+<script>
+    document.getElementById("but").addEventListener("click", function () {
+        const num1 = Math.floor(Math.random() * 10)
+        const num2 = Math.floor(Math.random() * 10)
+        document.getElementById("num1").innerHTML = num1;
+        document.getElementById("num2").innerHTML = num2;
+        if (num1 + num2 == 9) {
+            document.getElementById("notice").innerHTML = "You win"
+        }
+        else {
+            document.getElementById("notice").innerHTML = "You lose"
+        }
+        var images = ["00.png", "01.png", "02.png", "03.png", "04.png", "05.png", "06.png", "07.png", "08.png", "09.png"]
+        c1.src = images[num1]
+        c2.src = images[num2]
+
+    });
+</script>
+
+</html>
